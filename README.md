@@ -1,1 +1,1 @@
-This repo contain the solution to the test for the GSoC Proposal nicheR Shiny App 
+This repo contains the solutions to the test for the GSoC Proposal nicheR Shiny App 
