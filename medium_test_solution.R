@@ -65,6 +65,10 @@ server <- function(input, output, session) {
   
   observeEvent(input$run, {
     
+    showNotification("The workflow has begun computing!", 
+                     duration = 3, # Message disappears after 5 seconds
+                     type = "message") 
+    
     # 1. Download WorldClim bioclimatic variables
     bio_data <- geodata::worldclim_global(var = "bio", res = 10, path = tempdir())
     
