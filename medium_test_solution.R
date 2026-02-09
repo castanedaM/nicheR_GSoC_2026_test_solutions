@@ -66,7 +66,7 @@ server <- function(input, output, session) {
   observeEvent(input$run, {
     
     showNotification("The workflow has begun computing!", 
-                     duration = 3, # Message disappears after 5 seconds
+                     duration = 3, 
                      type = "message") 
     
     # 1. Download WorldClim bioclimatic variables

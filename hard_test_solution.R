@@ -10,7 +10,6 @@
 # Test Level: Hard
 
 # Test Prompt: 
-# Test Prompt: 
 # 1. Create an R package that deploys the Shiny app developed above.
 # 2. Include:
 #   - A function (for example run_app()) to launch the interface
