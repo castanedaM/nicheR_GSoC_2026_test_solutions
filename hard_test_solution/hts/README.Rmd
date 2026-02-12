@@ -1,0 +1,71 @@
+---
+title: "README"
+author: "Mariana Castaneda"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+**Hard Test Solution -- Shiny App Deployment as an R Package**\
+Evaluating Mentor: Marlon Cobos\
+Student: Mariana Castaneda Guzman\
+Last updated: 2026-02-12
+
+
+## Overview
+
+`hts` is a minimal R package that deploys an interactive Shiny
+application demonstrating a reproducible geospatial workflow using
+WorldClim bioclimatic data.
+
+The application performs the following steps:
+
+1.  Downloads WorldClim global bioclimatic variables\
+2.  Extracts a selected BIO variable (default = BIO1)\
+3.  Crops the raster to South America\
+4.  Masks the raster using a South America boundary shapefile\
+5.  Visualizes the raster at each processing step
+
+The processing workflow is handled by `helper_bio()`, while `run_app()`
+launches the Shiny interface.
+
+
+
+## Installation
+
+Install the development version from GitHub:
+
+``` {r}
+# install.packages("remotes")
+remotes::install_github("castanedaM/hts")
+```
+
+## Usage
+
+Launch the Shiny application:
+
+``` {r}
+hts::run_app()
+```
+
+Run the processing workflow directly:
+
+``` {r}
+out <- hts::helper_bio(selected_bio = 1)
+plot(out$bio_masked)
+```
+
+## Package Contents
+
+-   `run_app()` -- Launches the Shiny interface\
+-   `helper_bio()` -- Downloads and processes WorldClim bioclimatic
+    data\
+-   roxygen2 documentation\
+-   DESCRIPTION file\
+-   MIT License\
+-   GitHub Actions configured to pass `R CMD check`
+
+
+## License
+MIT License
