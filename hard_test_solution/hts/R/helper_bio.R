@@ -57,7 +57,7 @@ helper_bio <- function(selected_bio = 1,
     region_sf <- sf::st_read(shp_path, quiet = TRUE)
     region <- terra::vect(region_sf)
   }else{
-    region <- readRDS("./data/south_america.rds")
+    region <- readRDS("./inst/extdata/south_america.rds")
   }
 
   # Crop + mask
