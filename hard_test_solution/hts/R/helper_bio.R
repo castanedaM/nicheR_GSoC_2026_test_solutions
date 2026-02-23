@@ -1,32 +1,37 @@
-#' Download and Process WorldClim Bioclim Data
+#' Download and Process WorldClim Bioclimatic Data
 #'
-#' Downloads WorldClim global bioclimatic variables and processes
-#' a selected BIO layer by cropping and masking it to South America.
+#' Downloads WorldClim global bioclimatic variables and processes a selected
+#' BIO layer by cropping and masking it to a South America boundary.
 #'
 #' @param selected_bio Integer. Index of the BIO variable to extract.
-#' Default is 1 (BIO1: Annual Mean Temperature).
-#' @param shp_path Character. Path to the South America shapefile.
-#' Default is \code{"./data/south_america/vc965bq8111.shp"}.
-#' @param res Integer. WorldClim resolution in arc-minutes. Default is 10.
+#'   Default is 1 (BIO1: Annual Mean Temperature).
+#' @param shp_path Character or NULL. Path to a South America shapefile. If NULL,
+#'   a packaged boundary file is used (see Details).
+#' @param res Integer. WorldClim resolution in arc minutes. Default is 10.
 #' @param path Character. Directory where WorldClim files are downloaded.
-#' Default is \code{tempdir()}.
+#'   Default is \code{tempdir()}.
 #'
 #' @details
 #' The function:
 #' \enumerate{
-#'   \item Downloads WorldClim bioclim variables at the requested resolution.
-#'   \item Extracts the selected BIO layer.
-#'   \item Reads a South America shapefile.
-#'   \item Crops and masks the BIO raster to South America.
+#'   \item Downloads WorldClim bioclimatic variables at the requested resolution.
+#'   \item Extracts the selected BIO layer by index.
+#'   \item Loads a South America boundary from \code{shp_path} when provided,
+#'   otherwise loads a packaged \code{.rds} boundary file.
+#'   \item Crops and masks the BIO raster to the boundary.
 #' }
 #'
-#' @return A named list with elements:
+#' If \code{shp_path} is NULL, the function expects a boundary file named
+#' \code{"south_america.rds"} to be available. In an R package, store this file
+#' in \code{inst/extdata/} and load it with \code{system.file()} (recommended).
+#'
+#' @return A named list with:
 #' \describe{
-#'   \item{bio_stack}{Full SpatRaster stack of WorldClim bioclim variables.}
-#'   \item{bio}{Selected BIO layer (SpatRaster).}
-#'   \item{region}{South America boundary as a terra SpatVector.}
-#'   \item{bio_cropped}{Cropped BIO raster (SpatRaster).}
-#'   \item{bio_masked}{Cropped and masked BIO raster (SpatRaster).}
+#'   \item{bio_stack}{SpatRaster. Full stack of WorldClim bioclimatic variables.}
+#'   \item{bio}{SpatRaster. Selected BIO layer.}
+#'   \item{region}{SpatVector. South America boundary.}
+#'   \item{bio_cropped}{SpatRaster. Cropped BIO raster.}
+#'   \item{bio_masked}{SpatRaster. Cropped and masked BIO raster.}
 #' }
 #'
 #' @examples
@@ -37,7 +42,7 @@
 #'
 #' @export
 helper_bio <- function(selected_bio = 1,
-                       shp_path = "./inst/extdata/south_america/vc965bq8111.shp",
+                       shp_path = NULL,
                        res = 10,
                        path = tempdir()){
 
@@ -48,8 +53,12 @@ helper_bio <- function(selected_bio = 1,
   bio <- bio_stack[[selected_bio]]
 
   # Read and convert region boundary
-  region_sf <- sf::st_read(shp_path, quiet = TRUE)
-  region <- terra::vect(region_sf)
+  if(!is.null(shp_path)){
+    region_sf <- sf::st_read(shp_path, quiet = TRUE)
+    region <- terra::vect(region_sf)
+  }else{
+    region <- readRDS("./data/south_america.rds")
+  }
 
   # Crop + mask
   bio_cropped <- terra::crop(x = bio, y = region)

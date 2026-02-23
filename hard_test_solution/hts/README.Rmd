@@ -8,8 +8,13 @@ always_allow_html: true
 ---
 
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment  = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
 ```
 **Hard Test Solution -- Shiny App Deployment as an R Package**
 
