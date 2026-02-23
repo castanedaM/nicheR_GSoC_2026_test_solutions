@@ -6,7 +6,7 @@
 \usage{
 helper_bio(
   selected_bio = 1,
-  shp_path = "./data/south_america/vc965bq8111.shp",
+  shp_path = "./inst/extdata/south_america/vc965bq8111.shp",
   res = 10,
   path = tempdir()
 )

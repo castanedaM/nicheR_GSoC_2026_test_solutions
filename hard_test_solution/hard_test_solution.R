@@ -26,7 +26,5 @@ run_app()
 
 
 # 2. readMe inside the package
-# 2.2 
 
-install.packages("usethis")
-usethis::use_github_action_check_standard()
+# 2.2 
