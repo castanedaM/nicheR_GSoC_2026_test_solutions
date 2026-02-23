@@ -1,0 +1,14 @@
+* installing *source* package 'hts' ...
+** using staged installation
+** R
+** data
+** inst
+** byte-compile and prepare package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded from temporary location
+Warning in file.rename(instdir, final_instdir) :
+  cannot rename file 'C:/Users/mcguz/OneDrive/Desktop/nicheR_GSoC_2026_test_solutions/hard_test_solution/hts.Rcheck/00LOCK-hts/00new/hts' to 'C:/Users/mcguz/OneDrive/Desktop/nicheR_GSoC_2026_test_solutions/hard_test_solution/hts.Rcheck/hts', reason 'Access is denied'
+ERROR:    moving to final location failed
+* removing 'C:/Users/mcguz/OneDrive/Desktop/nicheR_GSoC_2026_test_solutions/hard_test_solution/hts.Rcheck/hts'
