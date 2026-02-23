@@ -1,22 +1,8 @@
----
-output: github_document
-editor_options: 
-  chunk_output_type: console
-  markdown: 
-    wrap: 72
-always_allow_html: true
----
 
+**Hard Test Solution – Shiny App Deployment as an R Package**
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-**Hard Test Solution -- Shiny App Deployment as an R Package**
-
-Evaluating Mentor: Marlon Cobos
-Student: Mariana Castaneda Guzman
-Last updated: 2026-02-23
-
+Evaluating Mentor: Marlon Cobos Student: Mariana Castaneda Guzman Last
+updated: 2026-02-23
 
 ## Overview
 
@@ -35,42 +21,48 @@ The application performs the following steps:
 The processing workflow is handled by `helper_bio()`, while `run_app()`
 launches the Shiny interface.
 
-
-
 ## Installation
 
 Install the development version from GitHub:
 
-``` {r}
+``` r
 # install.packages("remotes")
 remotes::install_github("castanedaM/nicheR_GSoC_2026_test_solutions/hard_test_solution/hts")
 ```
+
+    ## Using GitHub PAT from the git credential store.
+
+    ## Skipping install of 'hts' from a github remote, the SHA1 (aa3b226d) has not changed since last install.
+    ##   Use `force = TRUE` to force installation
 
 ## Usage
 
 Launch the Shiny application:
 
-```{r eval=FALSE, include=TRUE}
+``` r
 hts::run_app()
 ```
 
 Run the processing workflow directly:
 
-``` {r}
+``` r
 out <- hts::helper_bio(selected_bio = 1)
 names(out)
+```
 
+    ## [1] "bio_stack"   "bio"         "region"      "bio_cropped" "bio_masked"
+
+``` r
 terra::plot(out$bio_masked)
 ```
 
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 ## Package Contents
 
--   `run_app()` - Launches the Shiny interface
--   `helper_bio()` - Downloads and processes WorldClim bioclimatic
-    data
--   roxygen2 documentation
--   DESCRIPTION file
--   MIT License
--   GitHub Actions configured to pass `R CMD check`
-
-
+- `run_app()` - Launches the Shiny interface
+- `helper_bio()` - Downloads and processes WorldClim bioclimatic data
+- roxygen2 documentation
+- DESCRIPTION file
+- MIT License
+- GitHub Actions configured to pass `R CMD check`
