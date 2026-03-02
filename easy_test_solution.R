@@ -1,9 +1,7 @@
 # Title: Easy Test Solution
 # Evaluating Mentor: Marlon Cobos
-# Student: Mariana Castaneda Guzman
-# Date created: 02/06/2026
-# Date last updated: 02/09/2026
-
+# Contributor: Mariana Castaneda Guzman
+# Date last updated: 03/02/2026
 
 # Test Prompt and Level ---------------------------------------------------
 
@@ -18,7 +16,6 @@
 
 
 # Test Solution -----------------------------------------------------------
-
 
 # 1. Install and load the packages terra and geodata.
 if(!require("terra")) install.packages("terra")
@@ -39,7 +36,7 @@ south_america <- sf::st_read("./data/south_america/vc965bq8111.shp")
 
 bio1_cropped <- terra::crop(x = bio1, y = south_america)
 bio1_cropped_masked <- terra::mask(x = bio1_cropped, mask = south_america)
-
+/*
 
 # 5. Plot the final processed raster.
 terra::plot(bio1_cropped_masked)

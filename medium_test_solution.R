@@ -1,8 +1,7 @@
 # Title: Medium Test Solution
 # Evaluating Mentor: Marlon Cobos
-# Student: Mariana Castaneda Guzman
-# Date created: 02/06/2026
-# Date last updated: 02/09/2026
+# Contributor: Mariana Castaneda Guzman
+# Date last updated: 03/02/2026
 
 
 # Test Prompt and Level ---------------------------------------------------
@@ -89,7 +88,7 @@ server <- function(input, output, session) {
     })
     
     output$step2 <- renderPlot({
-      plot(bio1, main = "Step 2. BIO1 (Annual Mean Temperature)")
+      plot(bio1, main = "Step 2. Extract BIO1 (Annual Mean Temperature)")
     })
     
     output$step3 <- renderPlot({
