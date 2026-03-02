@@ -1,9 +1,14 @@
 Package: HardTestSolution
-Title: What the Package Does (One Line, Title Case)
-Version: 0.0.0.9000
+Title: Interactive Shiny Workflow for WorldClim Raster Processing
+Version: 0.0.1
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
-Description: What the package does (one paragraph).
+    person("Mariana", "Castaneda Guzman", email = "mcguzman1997@gmail.com", role = c("aut", "cre"))
+Description: 
+    Provides an interactive Shiny application that demonstrates a reproducible
+    geospatial workflow using WorldClim bioclimatic data. The app downloads
+    global climate rasters, extracts BIO1 (Annual Mean Temperature), crops and
+    masks the raster to South America using a local shapefile, and visualizes
+    each processing step.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
