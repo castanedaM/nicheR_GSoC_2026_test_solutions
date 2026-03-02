@@ -1,12 +1,11 @@
 
-<!-- badges: start -->
-[![R-CMD-check](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml)
-<!-- badges: end -->
-
 # Hard Test Solution – Shiny App as an R Package
 
-Evaluating Mentor: Marlon Cobos Student: Mariana Castaneda Guzman Last
-updated: 2026-03-02
+Evaluating Mentor: Marlon Cobos
+
+Student: Mariana Castaneda Guzman
+
+Last updated: 2026-03-02
 
 ## Test Promt:
 
@@ -76,3 +75,8 @@ terra::plot(out$bio_masked)
 - DESCRIPTION file
 - MIT License
 - GitHub Actions configured to pass `R CMD check`
+
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/blob/main/HardTestSolution/.github/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/blob/main/HardTestSolution/.github/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
