@@ -7,6 +7,10 @@ editor_options:
 always_allow_html: true
 ---
 
+  <!-- badges: start -->
+  [![R-CMD-check](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml)
+  <!-- badges: end -->
+  
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -16,16 +20,32 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-**Hard Test Solution -- Shiny App Deployment as an R Package**
+
+# Hard Test Solution -- Shiny App as an R Package
 
 Evaluating Mentor: Marlon Cobos
-Student: Mariana Castaneda Guzman
-Last updated: 2026-02-23
 
+Student: Mariana Castaneda Guzman
+
+Last updated: 2026-03-02
+
+
+## Test Promt: 
+
+1. Create an R package that deploys the Shiny app developed above.
+
+2. Include:
+
+   - A function (e.g., `run_app()`) to launch the interface  
+   - Helper functions for downloading and processing bioclim data  
+   - Documentation using `roxygen2`  
+   - A `DESCRIPTION` file and license  
+   - A `README` with installation and usage instructions  
+   - GitHub Actions configured to run `R CMD check` with no errors, warnings, or notes  
 
 ## Overview
 
-`hard_test_solution` is a minimal R package that deploys an interactive Shiny
+`HardTestSolution` is a minimal R package that deploys an interactive Shiny
 application demonstrating a reproducible geospatial workflow using
 WorldClim bioclimatic data.
 
@@ -46,9 +66,14 @@ launches the Shiny interface.
 
 Install the development version from GitHub:
 
-```{r , message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, include=FALSE}
 # install.packages("remotes")
-remotes::install_github("castanedaM/nicheR_GSoC_2026_test_solutions/hard_test_solution")
+remotes::install_github("castanedaM/nicheR_GSoC_2026_test_solutions/HardTestSolution")
+```
+
+```{r eval = FALSE, include=TRUE}
+# install.packages("remotes")
+remotes::install_github("castanedaM/nicheR_GSoC_2026_test_solutions/HardTestSolution")
 ```
 
 ## Usage
@@ -56,13 +81,13 @@ remotes::install_github("castanedaM/nicheR_GSoC_2026_test_solutions/hard_test_so
 Launch the Shiny application:
 
 ```{r eval=FALSE, include=TRUE}
-hard_test_solution::run_app()
+HardTestSolution::run_app()
 ```
 
 Run the processing workflow directly:
 
 ``` {r}
-out <- hard_test_solution::helper_bio(selected_bio = 1)
+out <- HardTestSolution::helper_bio(selected_bio = 1)
 names(out)
 
 terra::plot(out$bio_masked)
