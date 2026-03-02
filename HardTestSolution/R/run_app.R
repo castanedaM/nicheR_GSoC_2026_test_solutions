@@ -15,13 +15,11 @@
 #'
 #' The processing workflow is handled internally by \code{helper_bio()}.
 #'
-#' The South America shapefile must be available locally at:
-#' \code{./data/south_america/vc965bq8111.shp}
+#' The South America shapefile is available within the package
 #'
 #' @details
 #' WorldClim data are downloaded temporarily using
 #' \code{geodata::worldclim_global()} and stored in \code{tempdir()}.
-#' Reactive execution is triggered via \code{observeEvent()}.
 #'
 #' @return
 #' A \code{shiny.appobj} that launches the interactive interface.
