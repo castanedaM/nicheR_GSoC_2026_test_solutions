@@ -7,10 +7,6 @@ editor_options:
 always_allow_html: true
 ---
 
-  <!-- badges: start -->
-  [![R-CMD-check](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml)
-  <!-- badges: end -->
-  
 
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
@@ -20,6 +16,12 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/castanedaM/nicheR_GSoC_2026_test_solutions/actions/workflows/R-CMD-check.yaml)
+<!-- badges: end -->
+
+
 
 # Hard Test Solution -- Shiny App as an R Package
 
