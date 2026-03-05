@@ -43,7 +43,6 @@ helper_bio <- function(bio = 1,
   return(list(
     bio_stack = bio_data,
     bio = selected_bio,
-    region = region,
     bio_cropped = bio_cropped,
     bio_masked = bio_cropped_masked
   ))

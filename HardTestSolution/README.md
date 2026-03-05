@@ -31,8 +31,8 @@ The application performs the following steps:
 
 1.  Downloads WorldClim global bioclimatic variables
 2.  Extracts a selected BIO variable (default = BIO1)
-3.  Crops the raster to South America
-4.  Masks the raster using a South America boundary shapefile
+3.  Crops the raster to selected region (default = South America)
+4.  Masks the raster using a the region boundary
 5.  Visualizes the raster at each processing step
 
 The processing workflow is handled by `helper_bio()`, while `run_app()`
@@ -55,17 +55,9 @@ Launch the Shiny application:
 HardTestSolution::run_app()
 ```
 
-Run the processing workflow directly:
+If selected bio was `bio = 1` and `region = Asia`
 
-``` r
-out <- HardTestSolution::helper_bio(bio = 1)
-names(out)
-#> [1] "bio_stack"   "bio"         "region"      "bio_cropped" "bio_masked"
-
-terra::plot(out$bio_masked)
-```
-
-<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" /><img src="man/figures/README-unnamed-chunk-5-2.png" width="100%" /><img src="man/figures/README-unnamed-chunk-5-3.png" width="100%" /><img src="man/figures/README-unnamed-chunk-5-4.png" width="100%" />
 
 ## Package Contents
 
