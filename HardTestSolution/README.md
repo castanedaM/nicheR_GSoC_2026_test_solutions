@@ -5,7 +5,7 @@ Evaluating Mentor: Marlon Cobos
 
 Student: Mariana Castaneda Guzman
 
-Last updated: 2026-03-02
+Last updated: 2026-03-05
 
 ## Test Promt:
 
@@ -58,7 +58,7 @@ HardTestSolution::run_app()
 Run the processing workflow directly:
 
 ``` r
-out <- HardTestSolution::helper_bio(selected_bio = 1)
+out <- HardTestSolution::helper_bio(bio = 1)
 names(out)
 #> [1] "bio_stack"   "bio"         "region"      "bio_cropped" "bio_masked"
 
