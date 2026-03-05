@@ -1,6 +1,6 @@
 Package: HardTestSolution
 Title: Interactive Shiny Workflow for WorldClim Raster Processing
-Version: 0.0.1
+Version: 0.0.2
 Authors@R: 
     person("Mariana", "Castaneda Guzman", email = "mcguzman1997@gmail.com", role = c("aut", "cre"))
 Description: 
@@ -17,4 +17,5 @@ Imports:
   shiny,
   terra,
   sf,
-  geodata
+  geodata,
+  rnaturalearthdata

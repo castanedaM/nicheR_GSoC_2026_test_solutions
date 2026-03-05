@@ -27,15 +27,14 @@ helper_bio <- function(bio = 1,
                                         path = bio_path)
 
   # 3. Extract BIO1 (Annual Mean Temperature) from the dataset.
+  bio <- as.integer(bio)
   selected_bio <- bio_data[[bio]]
 
   # 4. Crop or mask BIO1 to an extent covering South America (polygon or bounding box acceptable).
   world <- rnaturalearthdata::sovereignty50
-  unique(world$continent)
-  continent_selection <- region
 
   # Cropping and masking
-  continent_vect <-   sf::st_as_sf(world[world$continent == continent_selection, ])
+  continent_vect <-   sf::st_as_sf(world[world$continent == region, ])
 
   bio_cropped <- terra::crop(x = selected_bio, y = continent_vect)
   bio_cropped_masked <- terra::mask(x = bio_cropped, mask = continent_vect)
