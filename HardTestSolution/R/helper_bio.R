@@ -1,4 +1,19 @@
-#' Download and Process WorldClim Bioclimatic Data
+#' Download and Process WorldClim Bioclim Data
+#'
+#' Downloads WorldClim bioclimatic variables and extracts a selected BIO
+#' layer. The layer is then cropped and masked to a chosen continent
+#' (default is South America).
+#'
+#' @param bio Integer. Index of the BIO variable to extract. Default is 1
+#' (BIO1: Annual Mean Temperature).
+#' @param region Character. Continent to crop and mask the raster to.
+#' Default is "South America".
+#' @param res Integer. WorldClim resolution in arc minutes. Default is 10.
+#' @param bio_path Character. Directory where WorldClim files are downloaded.
+#' Default is \code{tempdir()}.
+#'
+#' @return A list containing the full bioclim stack, the selected BIO layer,
+#' the cropped raster, and the cropped and masked raster.
 #'
 #' @export
 helper_bio <- function(bio = 1,

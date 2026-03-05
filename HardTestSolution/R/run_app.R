@@ -1,4 +1,15 @@
-#' Launch Shiny App for WorldClim Bioclim Workflow
+#' Run the Easy/Medium test Workflow Shiny App
+#'
+#' Launches a Shiny app that demonstrates a simple workflow.
+#' The app downloads WorldClim bio-climatic variables, extracts BIO1 (Annual Mean
+#' Temperature), crops the raster to South America, masks it to the
+#' continent, and plots each step of the process.
+#'
+#' @details
+#' The workflow is executed when the user presses the **Run** button.
+#' Each processing step is shown in the main panel as a raster plot.
+#'
+#' @return Launches an interactive Shiny application.
 #'
 #' @import shiny
 #' @import terra
